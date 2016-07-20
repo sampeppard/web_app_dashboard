@@ -1,0 +1,101 @@
+/* Header Styles */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    margin: 0;
+    padding: 0;
+    background-color: $main-purple;
+
+    .left-side {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30%;
+
+        .logo { 
+            height: 30px;
+            padding: 0 1em;
+        }
+    }
+
+    .right-side {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 70%;
+        height: 100%;
+
+        .alert-bell {
+            position: relative;
+            max-height: 30%;
+            margin: 0 -15px 0 0;
+            padding: 0 0.3em;
+        }
+
+        .alert-light {
+            @include border-radius(100%);
+            position: relative;
+            width: 10px;
+            height: 10px;
+            margin: 0 15px 25px 0;
+            background-color: $widget-green;
+        }
+
+        .notify-box {
+            @include border-radius(15px);
+            position: absolute;
+            left: -64px;
+            width: 120px;
+            padding: 5px;
+            background-color: $main-purple;
+            color: $white;
+            z-index: 1;
+        }
+
+        .notification {
+            width: 100%;
+            padding: 1px;
+            color: $white;
+            border-bottom: solid 2px $white;
+        }
+
+        .close-box {
+            border-bottom: none;
+        }
+
+
+        .bell-border {
+            width: 1px;
+            height:70%;
+            background-color: $nav-bar;
+        }
+
+        .avatar {
+            @include border-radius(50%);
+            max-height: 55%;
+            padding: 0 0.5em; 
+        }
+
+        .name {
+            color: $white;
+            flex-direction: row;
+            font-size: 0.5em;
+            padding: 0.7em
+        }
+    }
+
+
+    @include breakpoint(medium) {
+
+        width: 100%;
+
+    }
+
+    @include breakpoint(large) {
+
+   	}
+}

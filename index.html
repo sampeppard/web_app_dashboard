@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>WebDash | Dashboard</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<link rel="stylesheet" href="scss/application.css">
+		<link href="https://fonts.googleapis.com/css?family=Muli%7CRoboto:400,300,500,700,900" rel="stylesheet">
+	</head>
+  	<body>
+
+	  	<header>
+	  		<div class="left-side">
+	  			<img class="logo" src="icons/logo.png" alt="logo">
+	  		</div>
+	  		<div class="right-side">
+	  			<img class="alert-bell" src="icons/icon-bell.svg" alt="alert bell">
+	  			<div class="alert-light">
+	  				<div style="display: none;" class="notify-box">
+	  					<div class="notification">
+	  						<p>Notification 1: Blah Blah Blah</p>
+	  					</div>
+	  					<div class='notification'>
+	  						<p>Notification 2: Lorem Ipsum</p>
+	  					</div>
+	  					<div class='notification close-box'>
+	  						<p>CLOSE</p>
+	  					</div>
+  					</div>
+  				</div>
+	  			<div class="bell-border"></div>
+	  			<img class="avatar" src="img/prof.jpg" alt="profile picture">
+	  			<h1 class="name">Cal Clutterbuck</h1>
+  			</div>
+	  	</header>
+
+      	<section class="nav-bar">
+      		<div class="nav-select" id="dash-icon"></div>
+      		<div class="nav-select" id="members-icon"></div>
+      		<div class="nav-select" id="visits-icon"></div>
+      		<div class="nav-select" id="settings-icon"></div>
+		</section>
+
+		<section class="search">
+			<div class="search-left">
+				<h1>Dashboard</h1>
+			</div>
+			<div class="search-right">
+				<input type="text" name="search" placeholder="Search">
+			</div>
+		</section>
+
+		<div class="wrapper">
+
+			<section class="traffic">
+				<div class="text-bar">
+					<h2>TRAFFIC</h2>
+					<ul>
+						<li id="hourly" class="traffic-option selected">Hourly</li>
+						<li id="daily" class="traffic-option">Daily</li>
+						<li id="weekly" class="traffic-option">Weekly</li>
+						<li id="monthly" class="traffic-option">Monthly</li>
+					</ul>
+				</div>
+				<canvas id="line-chart--hourly" class="chart-option"></canvas>
+				<canvas style="display:none" id="line-chart--daily" class="chart-option"></canvas>
+				<canvas style="display:none" id="line-chart--weekly" class="chart-option"></canvas>
+				<canvas style="display:none" id="line-chart--monthly" class="chart-option"></canvas>
+			</section>
+
+		</div>
+
+		<div class="wrapper--half">
+
+			<!-- Bar Chart -->
+
+			<section class="daily-traffic">
+				<div class="inner-wrapper--half">
+					<h2>DAILY TRAFFIC</h2>
+					<canvas style="border-radius: 10px;" id="bar-chart"></canvas>
+				</div>
+			</section>
+
+			<!-- Pie Chart -->
+
+			<section class="users">
+				<div class="inner-wrapper--half">
+					<h2>MOBILE USERS</h2>
+					<canvas id="pie-chart"></canvas>
+				</div>
+			</section>
+
+		</div>
+
+		<div class="wrapper">
+
+			<section class="social">
+				<h2>SOCIAL STATS</h2>
+				<div class="inner-wrapper--full">
+					<div class="social-block">
+						<div class="social-icon">
+							<svg  class="social-icon-svg" id="twitter" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 32 32" fill="#fff" style="enable-background:new 0 0 32 32;" xml:space="preserve">
+							<path d="M32,3.1c-1.2,0.5-2.4,0.9-3.8,1c1.4-0.8,2.4-2.1,2.9-3.6c-1.3,0.8-2.7,1.3-4.2,1.6C25.8,0.8,24,0,22.2,0
+								c-3.6,0-6.6,2.9-6.6,6.6c0,0.5,0.1,1,0.2,1.5C10.3,7.8,5.5,5.2,2.2,1.2c-0.6,1-0.9,2.1-0.9,3.3c0,2.3,1.2,4.3,2.9,5.5
+								c-1.1,0-2.1-0.3-3-0.8c0,0,0,0.1,0,0.1c0,3.2,2.3,5.8,5.3,6.4c-0.6,0.1-1.1,0.2-1.7,0.2c-0.4,0-0.8,0-1.2-0.1
+								c0.8,2.6,3.3,4.5,6.1,4.6c-2.2,1.8-5.1,2.8-8.2,2.8c-0.5,0-1.1,0-1.6-0.1c2.9,1.9,6.4,3,10.1,3c12.1,0,18.7-10,18.7-18.7
+								c0-0.3,0-0.6,0-0.8C30,5.6,31.1,4.4,32,3.1z"/>
+							</svg>
+						</div>
+						<div class="social-stats">
+							<h4 class="social-app">Twitter</h4>
+							<h1 class="social-stat">10,345</h1>
+						</div>
+					</div>
+					<div class="social-block">
+						<div class="social-icon">
+							<svg class="social-icon-svg" id="facebook" enable-background="new 0 0 56.693 56.693" height="56.693px" version="1.1" viewBox="0 0 56.693 56.693" fill="#fff" width="56.693px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M40.43,21.739h-7.645v-5.014c0-1.883,1.248-2.322,2.127-2.322c0.877,0,5.395,0,5.395,0V6.125l-7.43-0.029  c-8.248,0-10.125,6.174-10.125,10.125v5.518h-4.77v8.53h4.77c0,10.947,0,24.137,0,24.137h10.033c0,0,0-13.32,0-24.137h6.77  L40.43,21.739z"/></svg>
+						</div>
+						<div class="social-stats">
+							<h4 class="social-app">Facebook</h4>
+							<h1 class="social-stat">8,739</h1>
+						</div>
+					</div>
+					<div class="social-block">
+						<div class="social-icon">
+							<svg class="social-icon-svg" id="google" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 						viewBox="0 0 30 30" fill="#fff" style="enable-background:new 0 0 30 30;" xml:space="preserve">
+							<path d="M17.7,25.7c0-0.3,0-0.5-0.1-0.8c-0.1-0.2-0.1-0.5-0.2-0.7c-0.1-0.2-0.2-0.4-0.3-0.7c-0.2-0.2-0.3-0.4-0.4-0.6
+								c-0.1-0.2-0.3-0.3-0.5-0.6c-0.2-0.2-0.4-0.4-0.5-0.5c-0.1-0.1-0.3-0.3-0.6-0.5c-0.3-0.2-0.5-0.4-0.6-0.4s-0.3-0.2-0.6-0.4
+								c-0.3-0.2-0.5-0.4-0.6-0.4c-0.2,0-0.5,0-1,0c-0.7,0-1.4,0-2,0.1c-0.7,0.1-1.4,0.2-2.1,0.5c-0.7,0.2-1.3,0.5-1.9,0.9s-1,0.8-1.3,1.4
+								c-0.3,0.6-0.5,1.3-0.5,2.1c0,0.9,0.2,1.7,0.7,2.3c0.5,0.7,1.1,1.2,1.8,1.6s1.5,0.7,2.3,0.9s1.6,0.3,2.4,0.3c0.8,0,1.5-0.1,2.2-0.2
+								c0.7-0.2,1.3-0.4,1.9-0.8c0.6-0.3,1.1-0.8,1.4-1.4C17.5,27.2,17.7,26.5,17.7,25.7z M15.4,9.1c0-0.8-0.1-1.6-0.3-2.5
+								c-0.2-0.9-0.5-1.7-0.9-2.5c-0.4-0.8-0.9-1.5-1.6-2c-0.7-0.5-1.5-0.8-2.3-0.8c-1.2,0-2.1,0.4-2.8,1.3c-0.7,0.9-1,1.9-1,3.2
+								c0,0.6,0.1,1.2,0.2,1.9c0.1,0.7,0.4,1.3,0.7,2c0.3,0.7,0.7,1.3,1.1,1.8c0.4,0.5,0.9,1,1.5,1.3c0.6,0.3,1.2,0.5,1.9,0.5
+								c1.2,0,2.1-0.4,2.7-1.2C15.1,11.4,15.4,10.4,15.4,9.1z M12.9,0h8.4l-2.6,1.5h-2.6c0.9,0.6,1.6,1.4,2.1,2.4s0.8,2.1,0.8,3.2
+								c0,0.9-0.1,1.8-0.4,2.5c-0.3,0.7-0.7,1.3-1.1,1.8c-0.4,0.4-0.8,0.9-1.3,1.2c-0.4,0.4-0.8,0.8-1.1,1.2c-0.3,0.4-0.4,0.8-0.4,1.3
+								c0,0.3,0.1,0.7,0.3,1c0.2,0.3,0.5,0.6,0.8,0.9c0.3,0.3,0.7,0.6,1.1,0.9c0.4,0.3,0.8,0.7,1.2,1.1c0.4,0.4,0.8,0.8,1.1,1.3
+								c0.3,0.5,0.6,1,0.8,1.6c0.2,0.6,0.3,1.3,0.3,2c0,2.1-0.9,3.9-2.7,5.4c-1.9,1.7-4.6,2.5-8.1,2.5c-0.8,0-1.5-0.1-2.3-0.2
+								c-0.8-0.1-1.6-0.3-2.3-0.6c-0.8-0.3-1.5-0.7-2.1-1.1c-0.6-0.4-1.1-1-1.5-1.7C1,27.6,0.8,26.9,0.8,26c0-0.8,0.2-1.6,0.7-2.6
+								c0.4-0.8,1-1.5,1.8-2.1c0.8-0.6,1.8-1.1,2.8-1.4c1-0.3,2-0.5,3-0.7c0.9-0.1,1.9-0.2,2.9-0.3c-0.8-1.1-1.2-2-1.2-2.9
+								c0-0.2,0-0.3,0-0.5c0-0.1,0.1-0.3,0.1-0.4c0-0.1,0.1-0.2,0.2-0.4c0.1-0.2,0.1-0.3,0.1-0.4c-0.5,0.1-1,0.1-1.3,0.1
+								c-1.9,0-3.5-0.6-4.9-1.9c-1.4-1.3-2-2.8-2-4.7c0-1.8,0.6-3.4,1.8-4.8C6,1.7,7.5,0.8,9.3,0.4C10.5,0.1,11.7,0,12.9,0z M32.8,4.9v2.5
+								h-4.9v4.9h-2.5V7.4h-4.9V4.9h4.9V0h2.5v4.9H32.8z"/>
+							</svg>
+						</div>
+						<div class="social-stats">
+							<h4 class="social-app">Google+</h4>
+							<h1 class="social-stat">2,530</h1>
+						</div>
+					</div>
+				</div>
+				<div class="inner-wrapper--full">
+					<div class="social-block">
+						<div class="social-icon">
+							<svg class="social-icon-svg" id="instagram" viewBox="0 0 420 419.997" fill="#fff" xmlns="http://www.w3.org/2000/svg"><title/><path d="M388.818,146.28a24.3,24.3,0,1,1-24.295-24.295A24.3,24.3,0,0,1,388.818,146.28ZM466,256l-0.005.306-1.38,88.105a121.58,121.58,0,0,1-120.2,120.2L256,466l-0.306-.006-88.105-1.376a121.586,121.586,0,0,1-120.206-120.2L46,256l0.006-.306,1.376-88.108a121.59,121.59,0,0,1,120.206-120.2L256,46l0.306,0.006,88.105,1.376a121.584,121.584,0,0,1,120.2,120.2Zm-39.112,0-1.374-87.8A82.654,82.654,0,0,0,343.8,86.485L256,85.114l-87.8,1.371A82.658,82.658,0,0,0,86.484,168.2L85.113,256l1.371,87.8A82.655,82.655,0,0,0,168.2,425.515l87.8,1.371,87.8-1.371A82.651,82.651,0,0,0,425.514,343.8Zm-63.048,0A107.841,107.841,0,1,1,256,148.159,107.962,107.962,0,0,1,363.84,256Zm-39.107,0A68.734,68.734,0,1,0,256,324.734,68.812,68.812,0,0,0,324.732,256Z" transform="translate(-46 -46.001)"/></svg>
+						</div>
+						<div class="social-stats">
+							<h4 class="social-app">Instagram</h4>
+							<h1 class="social-stat">9,339</h1>
+						</div>
+					</div>
+					<div class="social-block">
+						<div class="social-icon">
+							<svg enable-background="new 0 0 56.693 56.693" version="1.1" viewBox="0 0 56.693 56.693" fill="#fff" width="35px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M30.374,4.622c-13.586,0-20.437,9.74-20.437,17.864c0,4.918,1.862,9.293,5.855,10.922c0.655,0.27,1.242,0.01,1.432-0.715  c0.132-0.5,0.445-1.766,0.584-2.295c0.191-0.717,0.117-0.967-0.412-1.594c-1.151-1.357-1.888-3.115-1.888-5.607  c0-7.226,5.407-13.695,14.079-13.695c7.679,0,11.898,4.692,11.898,10.957c0,8.246-3.649,15.205-9.065,15.205  c-2.992,0-5.23-2.473-4.514-5.508c0.859-3.623,2.524-7.531,2.524-10.148c0-2.34-1.257-4.292-3.856-4.292  c-3.058,0-5.515,3.164-5.515,7.401c0,2.699,0.912,4.525,0.912,4.525s-3.129,13.26-3.678,15.582  c-1.092,4.625-0.164,10.293-0.085,10.865c0.046,0.34,0.482,0.422,0.68,0.166c0.281-0.369,3.925-4.865,5.162-9.359  c0.351-1.271,2.011-7.859,2.011-7.859c0.994,1.896,3.898,3.562,6.986,3.562c9.191,0,15.428-8.379,15.428-19.595  C48.476,12.521,41.292,4.622,30.374,4.622z"/></svg>
+						</div>
+						<div class="social-stats">
+							<h4 class="social-app">Pinterest</h4>
+							<h1 class="social-stat">4,534</h1>
+						</div>
+					</div>
+					<div class="social-block">
+						<div class="social-icon">
+							<svg height="40px" version="1.1" viewBox="0 0 60 60" fill="#fff" width="40px" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"><title/><desc/><defs/><g fill="#fff" fill-rule="evenodd" id="black" stroke="none" stroke-width="1"><g id="slice" transform="translate(-800.000000, -400.000000)"/><g fill="#fff" id="whatsapp" transform="translate(13.000000, 13.000000)"><path d="M17.0712615,33.2210462 C14.2108308,33.2210462 11.5235692,32.4899692 9.1856,31.2068923 L0.153846154,34.0769231 L3.09809231,25.3918769 C1.61304615,22.9523692 0.757538462,20.0915692 0.757538462,17.0336 C0.757538462,8.09341538 8.06129231,0.846153846 17.0716308,0.846153846 C26.0808615,0.846153846 33.3846154,8.09341538 33.3846154,17.0336 C33.3846154,25.9737846 26.0812308,33.2210462 17.0712615,33.2210462 Z M17.0712615,3.42412308 C9.50793846,3.42412308 3.35581538,9.52935385 3.35581538,17.0336 C3.35581538,20.0114462 4.32652308,22.7692308 5.96812308,25.0130462 L4.25489231,30.0670769 L9.52529231,28.3918769 C11.6912,29.8137846 14.2854154,30.6430769 17.0712615,30.6430769 C24.6334769,30.6430769 30.7867077,24.5382154 30.7867077,17.0339692 C30.7867077,9.52972308 24.6334769,3.42412308 17.0712615,3.42412308 L17.0712615,3.42412308 Z M25.3088,20.7617231 C25.2083692,20.5966769 24.9417846,20.4969846 24.5426462,20.2987077 C24.1424,20.1004308 22.1758769,19.1400615 21.8099692,19.0082462 C21.4429538,18.8760615 21.176,18.8092308 20.9097846,19.2065231 C20.6435692,19.6038154 19.8770462,20.4969846 19.6433231,20.7617231 C19.4099692,21.0268308 19.1769846,21.0600615 18.7771077,20.8614154 C18.3776,20.6631385 17.0889846,20.2440615 15.5611077,18.8923077 C14.3725538,17.8407385 13.5698462,16.5425231 13.3368615,16.1448615 C13.1035077,15.7479385 13.3121231,15.5334154 13.5122462,15.3358769 C13.6920615,15.1579077 13.9121231,14.8724923 14.1122462,14.6409846 C14.3123692,14.4091077 14.3788308,14.2440615 14.5117538,13.9789538 C14.6454154,13.7142154 14.5785846,13.4827077 14.4785231,13.2836923 C14.3784615,13.0854154 13.5783385,11.1329231 13.2452923,10.3383385 C12.9122462,9.54449231 12.5795692,9.67667692 12.3458462,9.67667692 C12.1124923,9.67667692 11.8459077,9.64344615 11.5793231,9.64344615 C11.3127385,9.64344615 10.8792615,9.74276923 10.5126154,10.1396923 C10.1463385,10.5369846 9.1136,11.4969846 9.1136,13.4491077 C9.1136,15.4016 10.5458462,17.288 10.7463385,17.5523692 C10.9460923,17.8167385 13.5118769,21.9536 17.5767385,23.5424 C21.6430769,25.1308308 21.6430769,24.6009846 22.3763692,24.5348923 C23.1085538,24.4688 24.7412923,23.5752615 25.0754462,22.6488615 C25.4081231,21.7217231 25.4081231,20.9271385 25.3088,20.7617231 L25.3088,20.7617231 Z"/></g></g></svg>
+						</div>
+						<div class="social-stats">
+							<h4 class="social-app">WhatsApp</h4>
+							<h1 class="social-stat">3,393</h1>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<div class="wrapper--half">
+
+			<section class="members">
+				<div class="inner-wrapper--half">
+					<h2>NEW MEMBERS</h2>
+					<div class="member-block">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-1.jpg" alt="James Gordon" /></div>
+							<div class="user-text">
+								<h3>James Gordon</h3>
+								<p>james.gordon62@example.com</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<p class="join-date">10/15/15</p>
+						</div>
+					</div>
+					<div class="member-block">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-2.jpg" alt="Brad Johnson" /></div>
+							<div class="user-text">
+								<h3>Brad Johnson</h3>
+								<p>brad.johnson80@example.com</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<p class="join-date">10/15/15</p>
+						</div>
+					</div>
+					<div class="member-block">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-3.jpg" alt="Dale Byrd" /></div>
+							<div class="user-text">
+								<h3>Dale Byrd</h3>
+								<p>dale.bird52@example.com</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<p class="join-date">10/15/15</p>
+						</div>
+					</div>
+					<div class="member-block no-border">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-4.jpg" alt="Hal Griffin" /></div>
+							<div class="user-text">
+								<h3>Hal Griffin</h3>
+								<p>hal.griffin54@example.com</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<p class="join-date">10/15/15</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="activity">
+				<div class="inner-wrapper--half">
+					<h2>RECENT ACTIVITY</h2>
+					<div class="member-block">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-1.jpg" alt="James Gordon" /></div>
+							<div class="user-text">
+								<h3>James Gordon commented on Facebook</h3>
+								<p>2 hours ago</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<div class="arrow-right"></div>
+						</div>
+					</div>
+					<div class="member-block">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-2.jpg" alt="Brad Johnson" /></div>
+							<div class="user-text">
+								<h3>Brad Johnson posted Tech Trendz via WhatsApp</h3>
+								<p>3 hours ago</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<div class="arrow-right"></div>
+						</div>
+					</div>
+					<div class="member-block">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-3.jpg" alt="Dale Byrd" /></div>
+							<div class="user-text">
+								<h3>Dale Byrd signed up via Facebook</h3>
+								<p>10 hours ago</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<div class="arrow-right"></div>
+						</div>
+					</div>
+					<div class="member-block no-border">
+						<div class="m-left-side">
+							<div class="user-avatar"><img class="user-avatar" src="img/128-4.jpg" alt="Hal Griffin" /></div>
+							<div class="user-text">
+								<h3>Hal Griffin commented on Google+</h3>
+								<p>1 day ago</p>
+							</div>
+						</div>
+						<div class="m-right-side">
+							<div class="arrow-right"></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<div class="wrapper--half">
+
+			<section class="message">
+				<div class="inner-wrapper--half">
+					<h2>MESSAGE USER</h2>
+					<input id="recipient" class="message-input" type="text" placeholder="Search for User">
+					<textarea class="message-input" placeholder="Message for User"></textarea>
+					<button id="send">SEND</button>
+				</div>
+			</section>
+
+			<section class="settings">
+				<div class="inner-wrapper--half">
+					<h2>SETTINGS</h2>
+					<div class="setting-block--half">
+						<p class="setting">Send Email Notifications</p>
+						<!-- Rounded switch -->
+						<label class="switch">
+  							<input name="setting1" type="checkbox" id="switch1">
+  							<span class="slider round">
+  								<span class="on">ON</span>
+  								<span class="off">OFF</span>
+  							</span>
+						</label>
+					</div>
+					<div class="setting-block--half">
+						<p class="setting">Set Profile to Public</p>
+						<!-- Rounded switch -->
+						<label class="switch">
+  							<input name="setting2" type="checkbox" id="switch2">
+  							<span class="slider round">
+  								<span class="on">ON</span>
+  								<span class="off">OFF</span>
+  							</span>
+						</label>
+					</div>
+					<div class="select-style">
+						<select id="timezone" name="dropdown-timezone">
+							<option value="0" disabled selected>Select Timezone</option>
+							<option value="1">(GMT-12:00) International Date Line West</option>
+							<option value="2">(GMT-11:00) Midway Island, Samoa</option>
+							<option value="3">(GMT-10:00) Hawaii</option>
+							<option value="4">(GMT-09:00) Alaska</option>
+							<option value="5">(GMT-08:00) Pacific Time (US & Canada)</option>
+							<option value="6">(GMT-08:00) Tijuana, Baja California</option>
+							<option value="7">(GMT-07:00) Arizona</option>
+							<option value="8">(GMT-07:00) Chihuahua, La Paz, Mazatlan</option>
+							<option value="9">(GMT-07:00) Mountain Time (US & Canada)</option>
+							<option value="10">(GMT-06:00) Central America</option>
+							<option value="11">(GMT-06:00) Central Time (US & Canada)</option>
+							<option value="12">(GMT-06:00) Guadalajara, Mexico City, Monterrey</option>
+							<option value="13">(GMT-06:00) Saskatchewan</option>
+							<option value="14">(GMT-05:00) Bogota, Lima, Quito, Rio Branco</option>
+							<option value="15">(GMT-05:00) Eastern Time (US & Canada)</option>
+							<option value="16">(GMT-05:00) Indiana (East)</option>
+							<option value="17">(GMT-04:00) Atlantic Time (Canada)</option>
+							<option value="18">(GMT-04:00) Caracas, La Paz</option>
+							<option value="19">(GMT-04:00) Manaus</option>
+							<option value="20">(GMT-04:00) Santiago</option>
+							<option value="21">(GMT-03:30) Newfoundland</option>
+							<option value="22">(GMT-03:00) Brasilia</option>
+							<option value="23">(GMT-03:00) Buenos Aires, Georgetown</option>
+							<option value="24">(GMT-03:00) Greenland</option>
+							<option value="25">(GMT-03:00) Montevideo</option>
+							<option value="26">(GMT-02:00) Mid-Atlantic</option>
+							<option value="27">(GMT-01:00) Cape Verde Is.</option>
+							<option value="28">(GMT-01:00) Azores</option>
+							<option value="29">(GMT+00:00) Casablanca, Monrovia, Reykjavik</option>
+							<option value="30">(GMT+00:00) Greenwich Mean Time : Dublin, Edinburgh, Lisbon, London</option>
+							<option value="31">(GMT+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna</option>
+							<option value="32">(GMT+01:00) Belgrade, Bratislava, Budapest, Ljubljana, Prague</option>
+							<option value="33">(GMT+01:00) Brussels, Copenhagen, Madrid, Paris</option>
+							<option value="34">(GMT+01:00) Sarajevo, Skopje, Warsaw, Zagreb</option>
+							<option value="35">(GMT+01:00) West Central Africa</option>
+							<option value="36">(GMT+02:00) Amman</option>
+							<option value="37">(GMT+02:00) Athens, Bucharest, Istanbul</option>
+							<option value="38">(GMT+02:00) Beirut</option>
+							<option value="39">(GMT+02:00) Cairo</option>
+							<option value="40">(GMT+02:00) Harare, Pretoria</option>
+							<option value="41">(GMT+02:00) Helsinki, Kyiv, Riga, Sofia, Tallinn, Vilnius</option>
+							<option value="42">(GMT+02:00) Jerusalem</option>
+							<option value="43">(GMT+02:00) Minsk</option>
+							<option value="44">(GMT+02:00) Windhoek</option>
+							<option value="45">(GMT+03:00) Kuwait, Riyadh, Baghdad</option>
+							<option value="46">(GMT+03:00) Moscow, St. Petersburg, Volgograd</option>
+							<option value="47">(GMT+03:00) Nairobi</option>
+							<option value="48">(GMT+03:00) Tbilisi</option>
+							<option value="49">(GMT+03:30) Tehran</option>
+							<option value="50">(GMT+04:00) Abu Dhabi, Muscat</option>
+							<option value="51">(GMT+04:00) Baku</option>
+							<option value="52">(GMT+04:00) Yerevan</option>
+							<option value="53">(GMT+04:30) Kabul</option>
+							<option value="54">(GMT+05:00) Yekaterinburg</option>
+							<option value="55">(GMT+05:00) Islamabad, Karachi, Tashkent</option>
+							<option value="56">(GMT+05:30) Sri Jayawardenapura</option>
+							<option value="57">(GMT+05:30) Chennai, Kolkata, Mumbai, New Delhi</option>
+							<option value="58">(GMT+05:45) Kathmandu</option>
+							<option value="59">(GMT+06:00) Almaty, Novosibirsk</option>
+							<option value="60">(GMT+06:00) Astana, Dhaka</option>
+							<option value="61">(GMT+06:30) Yangon (Rangoon)</option>
+							<option value="62">(GMT+07:00) Bangkok, Hanoi, Jakarta</option>
+							<option value="63">(GMT+07:00) Krasnoyarsk</option>
+							<option value="64">(GMT+08:00) Beijing, Chongqing, Hong Kong, Urumqi</option>
+							<option value="65">(GMT+08:00) Kuala Lumpur, Singapore</option>
+							<option value="66">(GMT+08:00) Irkutsk, Ulaan Bataar</option>
+							<option value="67">(GMT+08:00) Perth</option>
+							<option value="68">(GMT+08:00) Taipei</option>
+							<option value="69">(GMT+09:00) Osaka, Sapporo, Tokyo</option>
+							<option value="70">(GMT+09:00) Seoul</option>
+							<option value="71">(GMT+09:00) Yakutsk</option>
+							<option value="72">(GMT+09:30) Adelaide</option>
+							<option value="73">(GMT+09:30) Darwin</option>
+							<option value="74">(GMT+10:00) Brisbane</option>
+							<option value="75">(GMT+10:00) Canberra, Melbourne, Sydney</option>
+							<option value="76">(GMT+10:00) Hobart</option>
+							<option value="77">(GMT+10:00) Guam, Port Moresby</option>
+							<option value="78">(GMT+10:00) Vladivostok</option>
+							<option value="79">(GMT+11:00) Magadan, Solomon Is., New Caledonia</option>
+							<option value="80">GMT+12:00) Auckland, Wellington</option>
+							<option value="81">(GMT+12:00) Fiji, Kamchatka, Marshall Is.</option>
+							<option value="82">(GMT+13:00) Nuku'alofa</option>
+						</select>
+					</div>
+					<div class="setting-block--half">
+						<button id="save" name="save">SAVE</button>
+						<button id="cancel" name="cancel" class="cancel">CANCEL</button>
+					</div>
+				</div>
+					
+			</section>
+
+		</div>
+
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.6/Chart.min.js"></script>
+    	<script src="js/webapp.js"></script>
+    	<script src="js/chartapp.js"></script>
+  	</body>
+</html>

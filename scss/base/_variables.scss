@@ -1,0 +1,37 @@
+/* Variables */
+
+// Descriptive color names
+
+$white				: #fff;
+$black				: #000;
+$cornflower-violet	: #7477bf;
+$deYork				: #81C98F;
+$mulled-wine		: #4d4c72;
+$glacier			: #73B1BF;
+$alto				: #D8D8D8;
+$dove-gray			: #666666;
+$blue-violet    	: #5D61BF;
+$alabaster			: #FBFBFB;
+
+// Functional color names
+
+$main-purple		 : $cornflower-violet;
+$widget-green		 : $deYork;
+$light-gray			 : $alto;
+$text				 : $dove-gray;
+$main-background	 : $white;
+$field				 : $alabaster;
+$nav-bar			 : $mulled-wine;
+
+// Font stacks
+
+$open-sans : 'open-sans', sans-serif;
+
+// Font sizes
+
+$h1 : 1.5em;
+$h2 : 1.4em;
+$h3 : 1.3em;
+$h4 : 1.2em;
+$h5 : 1.1em;
+$p 	: 0.9em;

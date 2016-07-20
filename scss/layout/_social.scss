@@ -1,0 +1,127 @@
+/* Social Media Section Styles */
+
+.social {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	clear: both;
+	border-top: solid thin $light-gray;
+
+	h2 { margin-top: 2em; font-weight: lighter; font-size: 1em; display: block; }
+
+	.inner-wrapper--full {
+
+		.social-block {
+			@include border-radius(5px);
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			width: 90%;
+			height: auto;
+			margin: 1em 5%;
+			padding: 0;
+			background-color: $field;
+			border: solid thin $light-gray;
+		}
+
+		.social-block .social-icon {
+			@include border-radius(50%);
+			display: flex;
+			align-items: center;
+  			justify-content: center;
+			width: 70px;
+			height: 70px;
+			margin: 1em;
+			background-color: $main-purple;
+		}
+
+		.social-block .social-icon .social-icon-svg {
+			width: 30px;
+			margin: 0;
+			padding: 0;
+		}
+
+		.social-block .social-icon #facebook {
+			width: 35px;
+		}
+
+		.social-block .social-stats {
+			width: 62%;
+			text-align: left;
+		}
+
+		.social-block .social-stats .social-app {
+			margin: 0;
+			padding: 1em 0 0 0;
+			color: $main-purple;
+		}
+
+		.social-block .social-stats .social-stat {
+			margin: 0;
+			padding: 0 0.5em 0 0;
+			font-size: 3.1em;
+			font-weight: lighter;
+			color: $text;
+		}
+	}
+
+	@include breakpoint(small) {
+		.inner-wrapper .social-block {
+			width: 60%;
+			margin: 1em 25%;
+		}
+	}
+
+	@include breakpoint(medium) {
+		.inner-wrapper--full .social-block .social-icon {
+			width: 55px;
+			height: 55px;
+			margin: 1em 0 1.5em 0.8em;
+		}
+
+		.inner-wrapper--full .social-block .social-icon .social-icon-svg {
+			width: 25px;
+		}
+
+		.inner-wrapper--full .social-block {
+			width: 29%;
+			margin: 1em 6.7%;
+		}
+
+		.inner-wrapper--full .social-block .social-stats {
+			width: 57%;
+		}
+
+ 		.inner-wrapper--full .social-block .social-stats .social-app {
+			margin: 0;
+		}
+
+		.inner-wrapper--full .social-block .social-stats .social-stat {
+			font-size: 2em;
+		}
+	}
+
+	@include breakpoint(large) {
+		.inner-wrapper--full .social-block .social-icon {
+			width: 60px;
+			height: 60px;
+		}
+
+		.inner-wrapper--full .social-block .social-icon .social-icon-svg {
+			width: 25px;
+		}
+
+		.inner-wrapper--full .social-block {
+			width: 25%;
+			margin: 1em 4.2%;
+		}
+
+		.inner-wrapper--full .social-block .social-stats .social-app {
+			padding: 1em 0 0 0;
+		}
+
+		.inner-wrapper--full .social-block .social-stats .social-stat {
+			font-size: 2.3em;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+/* extends */
+
+
+// light font-weight;
+%lightFont {
+	font-weight:lighter;
+}
+
+//center text 
+%textCenter {
+	text-align:center;
+}
+
+//header/footer container
+%hfContainer {
+	background-color: #fafafa;
+    width:100%;
+    padding: 0.5em 0 0 0;
+}

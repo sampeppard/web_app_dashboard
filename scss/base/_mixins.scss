@@ -1,0 +1,38 @@
+/* Mixins */
+
+@mixin text($size, $l-height: null, $weight: null, $color: null) {
+	font-size: $size;
+	line-height: $l-height;
+	font-weight: $weight;
+	color: $color;
+}
+
+@mixin border-radius($radius) {
+  	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+  	border-radius: $radius;
+}
+
+@mixin transition($time) {
+  	-webkit-transition: all $time;
+	-moz-transition: all $time;
+    -ms-transition: all $time;
+  	transition: all $time;	
+}
+
+// Media queries
+@mixin breakpoint($point) {
+	@if $point == small {
+		@media (min-width: 450px) { @content; }
+	}
+	@else if $point == medium {
+		@media (min-width: 768px) { @content; }
+	}
+	@else if $point == large {
+		@media (min-width: 1024px) { @content; }
+	}
+	@else if $point == extra-large {
+		@media (min-width: 1300px) { @content; }
+	}
+}

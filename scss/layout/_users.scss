@@ -1,0 +1,17 @@
+/* Users Styles */
+
+.users {
+	display: flex;
+	width: 100%;
+	clear: both;
+	border-top: solid thin $light-gray;
+	padding: 1.3em 0;
+	text-align: left;
+
+	h2 { font-weight: lighter; font-size: 1em; }
+
+	@include breakpoint(medium) {
+		flex-direction: column;
+		width: 50%;
+	}
+}

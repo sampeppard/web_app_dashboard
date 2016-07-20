@@ -1,0 +1,51 @@
+/* Wrapper Styles */
+
+.inner-wrapper--full {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0 5%;
+	padding: 0;
+	background-color: $white;
+}
+
+.inner-wrapper--half {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin: 0 5%;
+	padding: 0;
+	background-color: $white;
+}
+
+.wrapper {
+	background-color: $white;
+}
+
+@include breakpoint(medium) {
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		width: 94%;
+		margin-left: 6%;
+		background-color: $white;
+	}
+
+	.wrapper--half {
+		display: flex;
+		flex-direction: row;
+		width: 94%;
+		margin-left: 6%;
+	}
+
+	.inner-wrapper--full {
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	.inner-wrapper--half {
+		flex-direction: column;
+		justify-content: space-around;
+	}
+}

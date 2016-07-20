@@ -1,0 +1,372 @@
+/* Variables -------------------- */
+
+$logo-color: #ef4659;
+$font-stack : 'Open Sans', sans-serif;
+$input-border-radius:3px;
+$border-lightGray: solid #888 3px;
+
+/* Mixins -------------------- */
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+}
+
+@mixin shader($opacity) {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: $opacity;
+  display: none;
+}
+
+/* Base Styles -------------------- */
+
+* {
+  box-sizing: content-box;
+}
+
+body {
+  background-color: #333;
+  margin: 0;
+  padding: 0px;
+  font-family: $font-stack;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: normal;
+  line-height: 1.1;
+  margin: 5px 2em; 
+  text-align: center;
+  font-style: normal;
+}
+
+h3 {
+  font-size: 1.25em;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.7em;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  margin-bottom: 0px;
+  border-radius: 0px; }
+
+ul,
+ol {
+  margin: 30px 0; }
+
+li {
+  margin-bottom: 10px; }
+
+form {
+    display: block;
+}
+
+input {
+  height: 3em;
+  width:35em;
+  font-size: 1em;
+  text-align: center;
+}
+
+#shader {
+  @include shader(0.75)
+}
+
+/* Main Container --------------------- */
+
+#main-container {
+  padding: 0px;
+  margin:-5px 0 0 0;
+  height: 900px;
+  width:100%;
+  background:  url('../img/bkRunners_filter_gradient.jpg') no-repeat center;
+  background-size: cover;
+  background-position: initial;
+  color: #fff;
+}
+
+/* Div Styles Within Main Content --------------------- */ 
+
+/* Top Logo -------- */
+
+#logo {
+  width:275px;
+  height:256px;
+  margin:5px auto 10px auto;
+
+  img {
+    width:275px;
+    height:256px;
+  }
+}
+
+/* Main Copy -------- */
+
+#copy {
+  width: 70%;
+  height:auto;
+  margin: 5px auto 10px auto;
+}
+
+/* Button -------- */
+
+#p-form {
+  width:30%;
+  height:auto;
+  margin:50px 35% 5px 35%;
+
+  input {
+    width: 100%;
+    height:55px;
+    background-color:#555;
+    color:#fff;
+    border: none;
+    padding:5px 0;
+    font-size:1.4em;
+    border-bottom: $border-lightGray;
+    @include border-radius(3px);
+  }
+
+  input:hover {
+     border-bottom:solid $logo-color 3px; 
+     color: $logo-color; 
+  }
+}
+
+/* Progressive Form -------- */
+
+#p-form-expand {
+  display:none;
+  width:50%;
+  height:250px;
+  position: absolute;
+  top:25%;
+  margin: 0 25%;
+  padding:0px;
+  background-color: #444;
+  z-index:2;
+  border:$border-lightGray;
+  @include border-radius(3px);
+
+  h3 {
+    margin:1em 0 0 0;
+  }
+
+  h3:hover {
+    color: $logo-color;
+  }
+
+  form {
+    width:70%;
+    height:auto;
+    margin:0.5em 15% 0 15%; 
+  }
+
+  input {
+    width: 100%;
+    height:35px;
+    background-color:#333;
+    margin:20px 0;
+    color:#fff;
+    border: none;
+    padding:10px 0;
+    border-bottom: $border-lightGray;
+    @include border-radius(3px);
+  }
+}
+
+/* Social Media Icons -------- */
+
+#social {
+  width:250px;
+  height:auto;
+  margin:3% auto;
+
+  img {
+    float: left;
+    display: inline-block;
+    padding:0.1em 1em;
+    margin:0; 
+    height: 50px;
+    width: 50px; 
+  }
+}
+
+/* Mobile Styles --------------------- */
+
+/* Tablet ----------------------- */
+
+@media screen and (max-width: 800px) {
+  h2 {
+    font-size: 1.5em;
+  }
+
+  #main-container {
+    margin:-19px 0 0 0;
+    background-position: 70%;
+  }
+
+  /* Top Logo -------- */
+
+  #logo {
+    width:225px;
+    height:210px;
+    margin:20px auto 8px auto;
+
+    img {
+      width:225px;
+      height:210px; 
+    }
+  }
+
+  /* Main Copy -------- */
+
+  #copy {
+    width:90%;
+  }
+
+  /* Main Button -------- */
+
+  #p-form {
+    margin: 30px 35% 0 35%;
+
+    input {
+      height: 40px;
+      font-size: 1em;
+    }
+  }
+
+  /* Progressive Form -------- */
+
+  #p-form-expand {
+    input {
+      font-size: 0.8em;
+    }
+  }
+}
+
+/* Phone ----------------------- */
+
+@media screen and (max-width: 400px) {
+  #main-container {
+    padding-top: 0px;
+    margin: -1.5em 0 0 0;
+    height: 775px;
+    background:  url('../img/bkRunners_filter_gradient.jpg') no-repeat center;
+    background-size: cover;
+    background-position: 80%;
+    color: #fff;
+  }
+
+  /* Top Logo -------- */
+
+  #logo {
+    width:150px;
+    height:150px;
+    margin:25px auto 10px auto;
+
+    img {
+      width:9.38em;
+      height:8.75em; 
+    }
+  }
+
+  /* Main Copy -------- */
+
+  #copy {
+    h2 {
+      font-size: 1.2em;
+      font-weight: normal;
+      line-height: 1.1;
+      margin: 5px 2em; 
+      text-align: center;
+      font-style: normal;
+    }
+  }
+
+  /* Main Button -------- */
+
+  #p-form {
+    width:200px;
+    height:auto;
+    margin:20px auto 5px auto;
+
+    input {
+      width: 100%;
+      height:35px;
+      background-color:#555;
+      color:#fff;
+      border: none;
+      font-size:1em;
+      padding:5px 0;
+      border-bottom: $border-lightGray;
+      @include border-radius(3px);
+    }
+  }
+
+  /* Progressive Form -------- */
+
+#p-form-expand {
+  display:none;
+  width:100%;
+  height:200px;
+  position: absolute;
+  top:20%;
+  margin: 0;
+  padding:0px;
+  background-color: #444;
+  z-index:2;
+  border:none;
+  border-top:$border-lightGray;
+  border-bottom:$border-lightGray;
+
+  h3 {
+    margin: 1.1em 0;
+  }
+
+  form {
+    width:70%;
+    height:auto;
+    margin:0px 15% 5px 15%; 
+  }
+
+  input {
+    width: 100%;
+    height:35px;
+    background-color:#333;
+    margin:10px 0;
+    color:#fff;
+    border: none;
+    padding:3px;
+    border-bottom: $border-lightGray;
+    @include border-radius(3px);
+  }
+}
+
+  /* Social Media Icons -------- */
+
+  #social {
+  width:200px;
+  height:auto;
+  margin:3% auto;
+
+  img {
+    float: left;
+    display: inline-block;
+    padding:0.1em 1.3em;
+    margin:0; 
+    height: 25px;
+    width: 25px; 
+  }
+}
+
+}
+

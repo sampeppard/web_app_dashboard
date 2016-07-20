@@ -1,0 +1,20 @@
+/* Typography Styles */
+
+/*---Header---*/
+
+.text-box {
+ 	width:90%;
+ 	margin:3em 5%;
+ 	clear:left;
+}
+
+/*---Footer---*/
+
+.footer-text-box {
+ 	width: 80%;
+ 	margin: 1em 10%;
+}
+
+@include breakpoint(medium) {
+
+}
