@@ -1,46 +1,30 @@
-# **Find a Repo**
+# **Web Dash**
 
-##### A project built using the GitHub API. 10.9.2016
+##### A project built using Sass, Flex-box and Chart.js. 7.9.2016
 #
 ##### By [Sam Peppard](https://github.com/sampeppard)
 #
-![screenshot of project main page](images/demo-screenshot.jpg)
+![screenshot of project main page](img/demo-screenshot.jpg)
 
 ----
 ### **Description**
 
-An app that returns github users when matching names are entered in the input field.
+A responsive web app dashboard using flex-box, Chart.js and some javascript.
+This project demonstrates mobile-first design and info-graphics using Chart.js.
 
 ----
 ### **Specifications**
 | _Behavior_ | _Input_ | _Output_ |
 |:---------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------:|
-| Enter a user's name | Enter a Github username: Twitter | Result: Username: Twitter, Repositories: etc. |
+| Get Hourly Traffic | Click on Hourly Traffic | Result: Traffic - 3, Traffic - 9, etc. |
+| Get Mobile Users for IOS | Click on everything but IOS | Result: IOS - 45 |
+| Get Users who Visited and User who Signed Up | Click on Visited and Signed Up | Result: Visited - 97, Signed Up - 54 |
 ----
 ### **Setup/Installation Requirements**
 
-If editing or running locally:
-
-##### 1. First, make sure the following is installed on your machine
-
-##### 2. make sure you have npm installed - check link below for installation
-
-https://nodejs.org/en/download/
-
-##### 3. make sure you have gulp and bower installed globally
-
-run `npm install bower gulp -g` to install both
-
-###### then
-
-#### Clone this repository: https://github.com/sampeppard/find_a_repo.git
-#### OPEN project folder ('find_a_repo') in Code Editor of choice
-
-* Run following commands from command line
-* 1. npm install
-* 2. bower install
-* 3. gulp build
-* 4. gulp serve
+* Clone this repository
+* If editing, open project directory in Code Editor of choice
+* If viewing, open index.html in a web browser
 
 ----
 
@@ -57,12 +41,12 @@ For comments or questions, please email sampeppard@gmail.com
 ### **Technologies Used**
 
 * HTML
+* CSS3
+* Scss
 * JavaScript
 * jQuery
-* Gulp.js
-* Bootstrap
-* npm JS package manager
-* Bower package manager
+* Chart.js
+
 ----
 ### **License**
 
