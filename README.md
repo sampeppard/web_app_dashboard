@@ -47,6 +47,10 @@ For comments or questions, please email sampeppard@gmail.com
 * jQuery
 * Chart.js
 
+## Link to project on Github Pages
+
+https://sampeppard.github.io/web_dash/
+
 ----
 ### **License**
 
